@@ -13,3 +13,12 @@ To generate the deployment data for a new network the following steps are necess
 - Set `MNEMONIC` in the `.env` file
 - Run `yarn compile <chain_id>`
 
+# Deploying the contract
+
+1. First send the native token on the network you want to deploy the contract on to the `signerAddress`. You'll need about 8e15 wei to pay for the transaction.
+
+2. Send the transaction. You can do so from your terminal with the following command:
+
+```bash
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_sendRawTransaction","params":[<raw_transaction>],"id":1}' <http_rpc_endpoint>
+```
